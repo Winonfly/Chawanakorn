@@ -399,3 +399,13 @@ html, body {
         padding: 40px 15px !important;
     }
 }
+/* ยกปุ่มและเนื้อหาขึ้นมาอยู่ชั้นบนสุดเพื่อให้กดได้ */
+.hero-anim, 
+#view-work-btn, 
+main button, 
+main a,
+.nav-links {
+    position: relative !important;
+    z-index: 999 !important; /* เลขสูงๆ จะทำให้ลอยอยู่เหนือพื้นหลังแอนิเมชัน */
+    pointer-events: auto !important; /* เปิดระบบให้รับการคลิกได้ปกติ */
+}
