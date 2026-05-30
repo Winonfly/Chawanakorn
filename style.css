@@ -1,0 +1,337 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+body {
+    margin: 0;
+    background-color: #050505;
+    color: white;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+}
+
+#particles-js {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 10;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glow-text {
+    text-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+}
+
+.nav-links a {
+    transition: color 0.3s ease;
+}
+.nav-links a:hover {
+    color: white;
+}
+/* --- จุดปรับขนาดทั้งหมด (เปลี่ยนตัวเลขที่นี่) --- */
+:root {
+    /* หน้าโหลด (Preloader) */
+    --loader-text-size: 3rem;      /* ขนาด Welcome To My Portofolio */
+    --loader-bar-width: 280px;     /* ความกว้างแถบโหลด */
+    --loader-bar-height: 3px;      /* ความหนาแถบโหลด */
+
+    /* ส่วนหัวและชื่อหลัก (Hero Section) */
+    --name-font-size: 7rem;        /* ขนาดชื่อ */
+    --name-letter-spacing: -5px;   /* ความชิดของตัวอักษรชื่อ */
+    --sub-text-size: 1.1rem;       /* ขนาดข้อความภาษาไทย/คำอธิบาย */
+    --badge-font-size: 10px;       /* ขนาดตัวอักษรในป้าย Open to Learn */
+    
+    /* ปุ่ม (Buttons) */
+    --btn-height: 14px;            /* ความสูง (Padding บน-ล่าง) */
+    --btn-width: 45px;             /* ความกว้าง (Padding ซ้าย-ขวา) */
+    --btn-text-size: 16px;         /* ขนาดตัวอักษรในปุ่ม */
+
+    /* เมนู (Navbar) */
+    --nav-logo-size: 14px;         /* ขนาดโลโก้ ADIT. */
+    --nav-link-size: 11px;         /* ขนาดเมนู Home, About, Skills */
+}
+
+/* --- การนำตัวแปรไปใช้งาน (ห้ามลบ) --- */
+body {
+    background-color: #050505;
+    color: white;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    margin: 0;
+}
+
+.welcome-title { font-size: var(--loader-text-size); font-weight: 800; }
+.progress-container { width: var(--loader-bar-width); height: var(--loader-bar-height); }
+
+.main-name { 
+    font-size: var(--name-font-size); 
+    letter-spacing: var(--name-letter-spacing); 
+    font-weight: 900; 
+}
+
+.description { font-size: var(--sub-text-size); }
+
+.custom-btn {
+    padding: var(--btn-height) var(--btn-width);
+    font-size: var(--btn-text-size);
+}
+
+.logo { font-size: var(--nav-logo-size); }
+.nav-links { font-size: var(--nav-link-size); }
+
+/* สไตล์พื้นหลัง Plexus และส่วนอื่นๆ */
+#particles-js { position: fixed; inset: 0; z-index: 1; }
+#preloader { position: fixed; inset: 0; background: #050505; z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+/* =========================================
+   จุดปรับขนาดหลัก (เปลี่ยนตัวเลขที่นี่ได้เลย)
+   ========================================= */
+.main-name {
+    font-size: 4rem; 
+    font-weight: 900;
+    letter-spacing: var(--name-spacing); /* ปรับตามตัวแปรด้านบน */
+    line-height: 1;
+}
+
+.nav-links a {
+    letter-spacing: var(--nav-spacing);
+    text-transform: uppercase;
+}
+
+.badge-text {
+    letter-spacing: var(--badge-spacing);
+    text-transform: uppercase;
+}
+:root {
+    /* --- [ส่วนบน] ระยะห่างตัวอักษรเมนูและป้าย --- */
+    --nav-spacing: 0.25em;       /* เมนูด้านบน (Home, About...) ให้ดูโปร่งหรู */
+    --badge-spacing: 0.4em;      /* ป้าย Open to Learn ให้ดูห่างๆ แบบ Modern */
+    --logo-spacing: 0.5em;       /* โลโก้ ADIT / MY WEBSITE */
+
+    /* --- [ส่วนล่าง] ระยะห่างชื่อหลักและคำอธิบาย --- */
+    --name-spacing: -0.01em;     /* ชื่อหลัก (Chawanakorn) ยิ่งลบเยอะยิ่งชิดกันแบบในรูป */
+    --desc-spacing: -0.01em;     /* คำอธิบายภาษาไทย ให้ชิดกันนิดๆ เพื่อความโมเดิร์น */
+    --btn-spacing: 0.05em;       /* ตัวหนังสือในปุ่ม */
+}
+
+/* --- นำไปใช้กับ Element ต่างๆ --- */
+
+/* ส่วนบน (Navbar & Badge) */
+.nav-links a {
+    letter-spacing: var(--nav-spacing);
+    text-transform: uppercase;
+}
+
+.nav-logo {
+    letter-spacing: var(--logo-spacing);
+}
+
+.badge-text {
+    letter-spacing: var(--badge-spacing);
+}
+
+/* ส่วนล่าง (Hero Section) */
+.main-name {
+    letter-spacing: var(--name-spacing);
+    line-height: 0.9; /* ปรับให้บรรทัดชิดกันด้วยเพื่อให้ดูแน่นเหมือนในรูป */
+}
+
+.hero-description {
+    letter-spacing: var(--desc-spacing);
+}
+
+.custom-btn {
+    letter-spacing: var(--btn-spacing);
+}    
+
+/* ปรับสไตล์กระจกและการจัดวาง */
+.glass-card {
+    background: rgba(255, 255, 255, 0.015);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.project-card:hover {
+    transform: translateY(-12px);
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(168, 85, 247, 0.4);
+    box-shadow: 0 30px 60px -15px rgba(168, 85, 247, 0.15);
+}
+
+.glow-purple {
+    color: #a855f7;
+    text-shadow: 0 0 25px rgba(168, 85, 247, 0.6);
+}
+/* สไตล์กล่องข้อมูล */
+.info-box {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.info-box:hover {
+    background: rgba(168, 85, 247, 0.05);
+    border-color: rgba(168, 85, 247, 0.2);
+    transform: translateX(5px);
+}
+
+.about-image-card {
+    box-shadow: 0 50px 100px -20px rgba(0,0,0,0.5);
+}
+
+/* ปรับระยะห่างตัวอักษรของหัวข้อเบื้องหลัง */
+#about h2.opacity-20 {
+    letter-spacing: -2px;
+}
+.tool-tag {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 8px 20px;
+    border-radius: 99px;
+    font-size: 12px;
+    color: #888;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.tool-tag:hover {
+    background: white;
+    color: black;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255,255,255,0.1);
+}
+
+/* เอฟเฟกต์กล่องสถิติ */
+.stat-box {
+    transition: all 0.4s ease;
+}
+
+.stat-box:hover {
+    background: rgba(168, 85, 247, 0.05);
+    border-color: rgba(168, 85, 247, 0.3);
+    transform: scale(1.05);
+}
+
+/* สไตล์กล่องสถิติ */
+.stat-card {
+    padding: 2rem 1rem;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    background: rgba(255, 255, 255, 0.01);
+    text-align: center;
+    transition: all 0.5s ease;
+}
+
+.stat-card:hover {
+    background: rgba(168, 85, 247, 0.03);
+    border-color: rgba(168, 85, 247, 0.2);
+    transform: scale(1.05);
+}
+
+/* แอนิเมชันสำหรับเส้น Progress (ถ้าใช้ GSAP) */
+.skill-item .absolute {
+    transform-origin: left;
+    transform: scaleX(0); /* เริ่มจาก 0 */
+}
+.skill-bar-bg {
+    height: 4px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    border-radius: 99px;
+}
+
+.skill-bar-fill {
+    width: 0%; /* ค่าเริ่มต้น */
+    transition: none !important; /* ห้ามมี transition ใน CSS เพราะจะตีกับ GSAP */
+}
+
+.js-fill, .html-fill, .css-fill {
+    display: block !important;
+    height: 100% !important;
+    min-height: 4px; /* บังคับให้มีความสูง */
+}
+/* การ์ด Contact */
+.contact-card-purple {
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.contact-card-purple:hover {
+    border-color: rgba(168, 85, 247, 0.5);
+    transform: translateY(-5px);
+}
+
+/* ปุ่ม Social ทรงกลม */
+.social-circle-purple {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #111;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: all 0.4s ease;
+}
+
+.social-circle-purple:hover {
+    background: #a855f7;
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+    transform: scale(1.1);
+}
+
+/* ช่องกรอกข้อมูล (Input) */
+.form-input-purple {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 1rem 1.5rem;
+    color: white;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.form-input-purple:focus {
+    border-color: #a855f7;
+    background: rgba(168, 85, 247, 0.05);
+    box-shadow: 0 0 10px rgba(168, 85, 247, 0.1);
+}
+/* บังคับให้ไอคอนในส่วน Contact เป็นสีม่วงทั้งหมด */
+#contact i {
+    color: #ffffff !important; /* สีม่วง Purple 500 */
+    transition: all 0.3s ease;
+}
+
+/* เมื่อเอาเมาส์ไปชี้ที่ปุ่ม Social ให้ไอคอนเปลี่ยนเป็นสีขาว */
+.social-circle-purple:hover i {
+    color: white !important;
+}
+.gsap-fill {
+    background-color: #a855f7 !important; /* สีม่วง Purple 500 */
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.5);
+}
+/* ตัวอย่างชื่อ Class พื้นหลังของคุณ (เช่น canvas หรือ network-bg) */
+#canvas-container, .particles-js-canvas-el {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1 !important; /* บังคับให้อยู่หลังสุด */
+    pointer-events: none; /* ทำให้คลิกทะลุพื้นหลังไปโดนปุ่มได้ */
+}
+
+/* บังคับให้ Navbar และเนื้อหาอยู่หน้าสุด */
+nav, main, section {
+    position: relative;
+    z-index: 10;
+}
