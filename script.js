@@ -82,10 +82,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener("load", () => {
     const skillBars = [
-        { class: ".js-fill", width: "88%" },
-        { class: ".html-fill", width: "95%" },
-        { class: ".css-fill", width: "85%" },
-        { class: ".gasap-fill", width: "76%" }
+        { class: ".js-fill", width: "48%" },
+        { class: ".html-fill", width: "63%" },
+        { class: ".css-fill", width: "58%" },
+
     ];
 
     skillBars.forEach(skill => {
